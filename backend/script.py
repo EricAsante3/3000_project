@@ -1,6 +1,5 @@
 # if you get some error talking bout stopwords run /Applications/Python\ 3.13/Install\ Certificates.command in terminal
 
-
 import pandas as pnd
 import nltk
 import numpy as np
@@ -55,7 +54,7 @@ def predictClassification(tweet):
   predict = model.predict(combinedFeatures)
   return "Hate Speech" if predict[0] == 0 else "Offensive Language" if predict[0] == 1 else "Neither"
 
-
+print(str(classification_report(ytest, ypred)))
 def test(input):
     return [accuracy,classification_report(ytest, ypred),predictClassification(input)]
 
