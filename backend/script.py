@@ -13,7 +13,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, classification_report
 
 
-csv = pnd.read_csv("./dataset.csv")
+csv = pnd.read_csv("dataset.csv")
 
 
 
