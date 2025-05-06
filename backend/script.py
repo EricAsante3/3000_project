@@ -14,6 +14,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, classification_report
+from graph1 import plot_classification_report
+from graph2 import plot_confusion_matrix_v2
+import seaborn as sns
+from sklearn.metrics import confusion_matrix
+
+
+target_names = ['Hate Speech', 'Offensive Language', 'Neither']
 
 # import dataset using pandas
 csv = pnd.read_csv("dataset.csv")
@@ -70,34 +77,28 @@ def predictClassification(tweet):
   return "Hate Speech" if predict[0] == 0 else "Offensive Language" if predict[0] == 1 else "Neither"
 
 # generate classification report
-report = classification_report(ytest, ypred)
-print(str(report))
+report = classification_report(ytest, ypred, target_names=target_names, output_dict=True)
 
-def plot():
-    dreport = classification_report(ytest, ypred, output_dict=True)
-    classes = list(dreport.keys())[:-3]
-    precision = [dreport[class_name]['precision'] for class_name in classes]
-    recall = [dreport[class_name]['recall'] for class_name in classes]
-
-    x = np.arange(len(classes))
-    width = .35
-
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.bar(x - width/2, precision, width, label='Precision', color='b')
-    ax.bar(x + width/2, recall, width, label='Recall', color='g')
-
-    ax.set_xlabel('Classes')
-    ax.set_ylabel('Scores')
-    ax.set_title('Precision and Recall for Each Class')
-    ax.set_xticks(x)
-    ax.set_xticklabels(classes)
-    ax.legend()
-    
-    plt.show()
 
 # accept user input and return it into docker
 def test(input):
+    data = [accuracy,report,predictClassification(input)]
     return [accuracy,report,predictClassification(input)]
+
+if __name__ == "__main__": 
+  '''
+  uncomment lines to graph. u can only graph 1 at a time
+  '''
+   # Graph 1 3x3
+   # plot_confusion_matrix_v2(ytest, ypred, class_names=target_names)
+
+  # Graph 2
+  #plot_classification_report(report, class_names=target_names)
+  while True:
+    user_input = input("phrase: ")
+    print(test(user_input))
+
+
 
 
 

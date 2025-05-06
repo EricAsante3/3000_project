@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import ClassificationReport from './table';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -94,7 +95,9 @@ function App() {
       </form>
       <div className='h-full w-full'>
         <h1 className='h-12 w-full text-center'>Accuracy Score: { Number((dataresponse[0] * 100).toPrecision(7))}</h1>
-        <pre className="font-mono text-sm whitespace-pre-wrap">{dataresponse[1]}</pre>
+
+        {dataresponse !== "" && <ClassificationReport data={dataresponse[1]} />}
+
 
       </div>
       

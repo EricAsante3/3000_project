@@ -15,17 +15,21 @@ RUN apt-get update && \
 COPY backend /app/backend
 COPY frontend /app/frontend
 
-# Install Python dependencies
-WORKDIR /app/backend
-RUN pip install --no-cache-dir -r requirements.txt
 
 # Install frontend dependencies
 WORKDIR /app/frontend/3000_project
 RUN npm install
+
+
+# Install Python dependencies
+WORKDIR /app/backend
+RUN pip install --no-cache-dir -r requirements.txt
+
+
 
 # Expose ports: Flask (5000), Vite (5173)
 EXPOSE 5123 5173
 
 
 # Run Flask and React app concurrently
-CMD ["sh", "-c", "cd /app/backend && python app.py & cd /app/frontend/3000_project && npm run dev -- --host"]
+CMD ["sh", "-c", "cd /app/frontend/3000_project && npm run dev -- --host & cd /app/backend && python app.py"]
