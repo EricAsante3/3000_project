@@ -94,7 +94,7 @@ function App() {
 
       </form>
       <div className='h-full w-full'>
-        <h1 className='h-12 w-full text-center'>Accuracy Score: { Number((dataresponse[0] * 100).toPrecision(7))}</h1>
+        <h1 className='h-12 w-full text-center'>---------------------------------</h1>
 
         {dataresponse !== "" && <ClassificationReport data={dataresponse[1]} />}
 
