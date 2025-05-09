@@ -5,7 +5,7 @@
 
 An AI-powered web application that classifies user-generated text into three categories: **Hate Speech**, **Offensive Language**, or **Neither**. Built to demonstrate the application of machine learning in real-time content moderation.
 
-## 👨‍💻 Authors
+## 👨‍💻 Developers
 
 - Eric Asante  
 - Ethan Thomas  
