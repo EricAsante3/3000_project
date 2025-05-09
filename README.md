@@ -1,5 +1,5 @@
 # AI Content Moderation System Project
-| Screenshot 1 | Screenshot 2 | Screenshot 3 |
+| Offensive Language Perdiction | Neither Perdiction | Hate Speech Perdiction |
 |--------------|--------------|--------------|
 | ![](screenshots/s1.jpg) | ![](screenshots/s2.png) | ![](screenshots/s3.png) |
 
