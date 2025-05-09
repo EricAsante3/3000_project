@@ -1,5 +1,5 @@
 # AI Content Moderation System Project
-
+|--------------|--------------|--------------|
 | ![](screenshots/s1.jpg) | ![](screenshots/s2.png) | ![](screenshots/s3.png) |
 
 An AI-powered web application that classifies user-generated text into three categories: **Hate Speech**, **Offensive Language**, or **Neither**. Built to demonstrate the application of machine learning in real-time content moderation.
