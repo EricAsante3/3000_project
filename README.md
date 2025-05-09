@@ -1,4 +1,5 @@
 # AI Content Moderation System Project
+| Screenshot 1 | Screenshot 2 | Screenshot 3 |
 |--------------|--------------|--------------|
 | ![](screenshots/s1.jpg) | ![](screenshots/s2.png) | ![](screenshots/s3.png) |
 
